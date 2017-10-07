@@ -6,7 +6,7 @@ import javax.servlet.ServletContext;
 import javax.servlet.ServletException;
 
 /**
- * Created by zhaoq on 2016/4/9.
+ * Created by dysz on 2016/4/9.
  */
 public class WebApplicationStartup implements WebApplicationInitializer {
     public void onStartup(ServletContext servletContext) throws ServletException {

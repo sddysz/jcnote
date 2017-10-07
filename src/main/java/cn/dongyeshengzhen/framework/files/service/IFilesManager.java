@@ -5,7 +5,7 @@ import cn.dongyeshengzhen.framework.files.entity.Files;
 import java.io.InputStream;
 
 /**
- * Created by zhaoq on 2016/9/1.
+ * Created by dysz on 2016/9/1.
  */
 public interface IFilesManager {
     /**

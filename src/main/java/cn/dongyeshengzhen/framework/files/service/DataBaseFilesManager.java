@@ -16,7 +16,7 @@ import java.util.Date;
 import java.util.UUID;
 
 /**
- * Created by zhaoq on 2016/8/31.
+ * Created by dysz on 2016/8/31.
  */
 @Service
 public class DataBaseFilesManager implements IFilesManager {

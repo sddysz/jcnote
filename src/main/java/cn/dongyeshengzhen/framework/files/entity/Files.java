@@ -9,7 +9,7 @@ import javax.persistence.Table;
 import java.util.Date;
 
 /**
- * Created by zhaoq on 2016/9/1.
+ * Created by dysz on 2016/9/1.
  */
 @Entity
 @Table(name = "files")

@@ -1,7 +1,6 @@
 package cn.dongyeshengzhen.framework.security.entity;
 
 
-import cn.dongyeshengzhen.portal.content.entity.ContentType;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import org.hibernate.annotations.Fetch;
 import org.hibernate.annotations.FetchMode;
@@ -30,7 +29,7 @@ public class Menu {
     @Fetch(FetchMode.SUBSELECT)//采用子查询抓取，避免1+n次查询
     @JoinColumn(name = "navId")
     @OrderBy(value = "orderId ASC,updateTime DESC")
-    List<ContentType> contentTypeList;
+    List contentTypeList;
 
     public Integer getId() {
         return id;
@@ -56,11 +55,11 @@ public class Menu {
         this.displayName = displayName;
     }
 
-    public List<ContentType> getContentTypeList() {
+    public List getContentTypeList() {
         return contentTypeList;
     }
 
-    public void setContentTypeList(List<ContentType> contentTypeList) {
+    public void setContentTypeList(List contentTypeList) {
         this.contentTypeList = contentTypeList;
     }
 

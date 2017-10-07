@@ -6,7 +6,7 @@ import org.springframework.data.jpa.repository.JpaSpecificationExecutor;
 import org.springframework.stereotype.Repository;
 
 /**
- * Created by zhaoq on 2016/5/4.
+ * Created by dysz on 2016/5/4.
  */
 @Repository
 public interface FilesDao extends JpaRepository<Files, String>, JpaSpecificationExecutor<Files> {

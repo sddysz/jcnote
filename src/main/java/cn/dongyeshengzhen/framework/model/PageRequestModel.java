@@ -6,7 +6,7 @@ import org.springframework.data.domain.Sort;
 import org.springframework.util.StringUtils;
 
 /**
- * Created by zhaoq on 2016/7/21.
+ * Created by dysz on 2016/7/21.
  */
 public class PageRequestModel {
     int pageSize = 10;

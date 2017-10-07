@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/bdmri.iml" filepath="$PROJECT_DIR$/bdmri.iml" />
+      <module fileurl="file://$PROJECT_DIR$/cloudnote.iml" filepath="$PROJECT_DIR$/cloudnote.iml" />
     </modules>
   </component>
 </project>

@@ -4,15 +4,11 @@ import cn.dongyeshengzhen.framework.security.entity.Menu;
 import cn.dongyeshengzhen.framework.security.service.MenuManager;
 import cn.dongyeshengzhen.framework.web.TagBuilder;
 import cn.dongyeshengzhen.framework.web.TagDTO;
-import cn.dongyeshengzhen.portal.content.entity.ContentType;
-import org.apache.commons.lang.StringUtils;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import org.springframework.web.context.WebApplicationContext;
 
 import javax.servlet.ServletContext;
 import java.util.List;
-import java.util.Map;
 
 /**
  * 自定义菜单标签处理类。 根据当前认证实体获取允许访问的所有菜单，并输出特定导航菜单的html
@@ -72,7 +68,6 @@ public class MenuTagBuilder implements TagBuilder {
 
         }
         buffer.append("</dt> </dl>");
-        buffer.append(buildNavhide(menus));
         buffer.append("</div> </div>");
         return buffer.toString();
     }
@@ -87,9 +82,6 @@ public class MenuTagBuilder implements TagBuilder {
             Menu m = menus.get(i);
             hideMenuBuffer.append("<div for='nav" + m.getId() + "'>");
             for (int j = 0; j < m.getContentTypeList().size(); j++) {
-                ContentType c = m.getContentTypeList().get(j);
-                hideMenuBuffer.append("<a href='/nav_" + m.getName() + "/" + c.getName() + "'>" + c.getDisplayName() + "</a>");
-            }
             hideMenuBuffer.append("</div>");
             buffer.append(hideMenuBuffer);
         }
@@ -99,9 +91,6 @@ public class MenuTagBuilder implements TagBuilder {
         return buffer.toString();
     }
 
-    String buildNavhide(List<Menu> menus) {
-        StringBuffer buffer = new StringBuffer();
-        buffer.append("<div class=\"menuhide\">\n <i class=\"icon_menu\"></i>\n <div>");
 
 
         for (int i = 0; i < menus.size(); i++) {
@@ -112,8 +101,6 @@ public class MenuTagBuilder implements TagBuilder {
             } else {
                 hideMenuBuffer.append("<span class=\"menuhide_span\">").append(m.getDisplayName()).append("<h1 style=\"display: none;\">");
                 for (int j = 0; j < m.getContentTypeList().size(); j++) {
-                    ContentType c = m.getContentTypeList().get(j);
-                    hideMenuBuffer.append("<a href='/nav_" + m.getName() + "/" + c.getName() + "'>" + c.getDisplayName() + "</a>");
                 }
                 hideMenuBuffer.append("</h1>\n </span>");
                 buffer.append(hideMenuBuffer);

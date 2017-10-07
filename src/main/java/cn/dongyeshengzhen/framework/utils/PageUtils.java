@@ -8,7 +8,7 @@ import org.springframework.data.domain.Pageable;
 import java.util.List;
 
 /**
- * Created by zhaoq on 2016/4/18.
+ * Created by dysz on 2016/4/18.
  */
 public class PageUtils {
     public static <T> Page<T> getPage(List<T> result, int pageNumber, int pageSize) {

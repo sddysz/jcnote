@@ -1,5 +1,5 @@
 /**
- * Created by zhaoq on 2016/4/6.
+ * Created by dysz on 2016/4/6.
  */
 $(function(){
     $("[page-index]:not('.disabled')").click(function () {

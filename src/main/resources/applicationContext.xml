@@ -9,8 +9,8 @@
     <context:annotation-config />
     <!-- 默认扫描Service层的包路径 -->
     <context:component-scan base-package="
-    cn.dongyeshengzhen.portal.*.service,
-    cn.dongyeshengzhen.portal.*.dao,
+    cn.dongyeshengzhen.cloudnote.*.service,
+    cn.dongyeshengzhen.cloudnote.*.dao,
     cn.dongyeshengzhen.framework.*.service,
     cn.dongyeshengzhen.framework.web.taglib.builder"/>
     <bean id="propertyConfigurer" class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
@@ -47,32 +47,6 @@
     </bean>
     <!-- 事务管理器 -->
     <tx:annotation-driven transaction-manager="transactionManagerMySql"  proxy-target-class="true"/>
-
-    <!-- MySql JPA实体管理器工厂 -->
-    <!--<bean id="defaultEntityManagerFactory" class="org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean">-->
-        <!--<property name="persistenceUnitName" value="service-app"/>-->
-        <!--<property name="dataSource" ref="IcaDataSource"/>-->
-        <!--<property name="jpaVendorAdapter" ref="jpaVendorAdapter" />-->
-        <!--<property name="jpaDialect" ref="jpaDialect" />-->
-        <!--<property name="packagesToScan" value="cn.dongyeshengzhenhengzhen.framework.*"/>-->
-        <!--<property name="jpaProperties">-->
-            <!--<props>-->
-                <!--<prop key="hibernate.dialect">org.hibernate.dialect.MySQLDialect</prop>-->
-                <!--<prop key="hibernate.connection.allowMultiQueries">true</prop>-->
-                <!--<prop key="current_session_context_class">thread</prop>-->
-                <!--<prop key="hibernate.show_sql">false</prop>-->
-                <!--<prop key="hibernate.format_sql">false</prop>-->
-                <!--<prop key="hibernate.default_entity_mode">dynamic-map</prop>-->
-                <!--<prop key="javax.persistence.validation.mode">none</prop>-->
-                <!--<prop key="hibernate.ejb.entitymanager_factory_name">defaultEntityManagerFactory</prop>-->
-                <!--<prop key="hibernate.physical_naming_strategy">cn.dongyeshengzhenhengzhen.framework.orm.hibernate.ImprovedNamingStrategy</prop>-->
-            <!--</props>-->
-        <!--</property>-->
-    <!--</bean>-->
-
-
-
-
 
 
     <tx:advice id="txAdvice" transaction-manager="transactionManagerMySql">

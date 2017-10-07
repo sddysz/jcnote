@@ -1,7 +1,7 @@
 package cn.dongyeshengzhen.framework.files.model;
 
 /**
- * Created by zhaoq on 2016/8/31.
+ * Created by dysz on 2016/8/31.
  */
 public class UploadResultModel {
     private Boolean result = false;

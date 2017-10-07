@@ -1,26 +1,13 @@
-CREATE DATABASE ${db_name} DEFAULT CHARACTER SET utf8 COLLATE utf8_general_ci;
-
-USE ${db_name};
-
-CREATE TABLE `t_customer` (
-  `custom_id` bigint(20) NOT NULL AUTO_INCREMENT,
-  `custom_name` varchar(128) DEFAULT NULL,
-  `address` varchar(255) DEFAULT NULL,
-  `asdf` varchar(255) DEFAULT NULL,
-  `asdf1` varchar(255) DEFAULT NULL,
-  PRIMARY KEY (`custom_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
 
 
-CREATE TABLE `t_customer2` (
-  `custom_id` bigint(20) NOT NULL AUTO_INCREMENT,
-  `custom_name` varchar(128) DEFAULT NULL,
-  `address` varchar(255) DEFAULT NULL,
-  `asdf` varchar(255) DEFAULT NULL,
-  `asdf1` varchar(255) DEFAULT NULL,
-  PRIMARY KEY (`custom_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
+USE cloudnote;
 
-
-
-use tenant;
+CREATE TABLE `t_user` (
+  `id` INT UNSIGNED NOT NULL,
+  `email` VARCHAR(255) NULL,
+  `isActive` INT NULL,
+  `pwd` CHAR(255) NULL,
+  `username` VARCHAR(45) NULL,
+  `usernameRaw` VARCHAR(45) NULL,
+  `time` DATE NULL,
+  PRIMARY KEY (`id`));
