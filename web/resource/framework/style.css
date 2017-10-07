@@ -1,0 +1,88 @@
+body {
+    font-size: 14px;
+}
+
+.weui_media_box .weui_media_title {
+    font-size: 15px;
+}
+
+.weui_cells, .weui_btn {
+    font-size: 14px;
+}
+
+.weui_btn.weui_btn_mini {
+    line-height: 1.7;
+}
+
+.weui_btn_area .weui_btn {
+    line-height: 2.5;
+}
+
+.weui_select {
+    padding-left: 0px;
+}
+
+.weui_tab_cell {
+    position: relative;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+    -ms-flex-align: center;
+    align-items: center;
+}
+
+.weui_tab_cell_ft {
+    text-align: right;
+    padding-right: 5px;
+    color: #888;
+}
+
+.mapTools li {
+    list-style: none;
+    line-height: 2;
+}
+
+.weui_map_box {
+    position: relative;
+    width: 300px;
+}
+
+.weui_map_box .weui_media_hd {
+    padding: 0px 15px 0px 0px;
+}
+
+.weui_media_appmsg_thumb {
+    border: 1px solid #dcdcdc;
+    -moz-border-radius: 10px;
+    -webkit-border-radius: 10px;
+    border-radius: 10px;
+
+}
+
+.weui_map_box.weui_media_appmsg .weui_media_appmsg_thumb {
+    width: 70px;
+    max-height: 70px;
+    vertical-align: middle;
+}
+
+.weui_map_box.weui_media_appmsg {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+    -ms-flex-align: center;
+    align-items: center;
+}
+
+.wx_footer {
+    padding-top: 10px;
+}
+
+.weui_select {
+    height: auto;
+}

@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:tx="http://www.springframework.org/schema/tx"
+       xmlns:jpa="http://www.springframework.org/schema/data/jpa"
+       xmlns:aop="http://www.springframework.org/schema/aop"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx.xsd http://www.springframework.org/schema/data/jpa http://www.springframework.org/schema/data/jpa/spring-jpa.xsd http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop.xsd">
+    <context:annotation-config />
+    <!-- 默认扫描Service层的包路径 -->
+    <context:component-scan base-package="
+    cn.dongyeshengzhen.portal.*.service,
+    cn.dongyeshengzhen.portal.*.dao,
+    cn.dongyeshengzhen.framework.*.service,
+    cn.dongyeshengzhen.framework.web.taglib.builder"/>
+    <bean id="propertyConfigurer" class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
+        <property name="locations">
+            <list>
+                <value>classpath*:*.properties</value>
+            </list>
+        </property>
+    </bean>
+    <bean id="propertiesReader" class="org.springframework.beans.factory.config.PropertiesFactoryBean">
+        <property name="locations">
+            <list>
+                <value>classpath*:*.properties</value>
+            </list>
+        </property>
+    </bean>
+
+    <jpa:repositories
+            base-package="cn.dongyeshengzhen.**"
+            repository-impl-postfix="Impl"
+            entity-manager-factory-ref="defaultEntityManagerFactory"
+            transaction-manager-ref="transactionManagerMySql">
+    </jpa:repositories>
+
+
+
+    <bean id="persistenceProvider" class="org.springframework.orm.jpa.vendor.SpringHibernateEjbPersistenceProvider" />
+    <bean id="jpaVendorAdapter" class="org.springframework.orm.jpa.vendor.HibernateJpaVendorAdapter"/>
+    <!-- 用于指定一些高级特性 -->
+    <bean id="jpaDialect" class="org.springframework.orm.jpa.vendor.HibernateJpaDialect" />
+    <!-- 事务管理器 -->
+    <bean id="transactionManagerMySql" class="org.springframework.orm.jpa.JpaTransactionManager">
+        <property name="entityManagerFactory" ref="defaultEntityManagerFactory"/>
+    </bean>
+    <!-- 事务管理器 -->
+    <tx:annotation-driven transaction-manager="transactionManagerMySql"  proxy-target-class="true"/>
+
+    <!-- MySql JPA实体管理器工厂 -->
+    <!--<bean id="defaultEntityManagerFactory" class="org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean">-->
+        <!--<property name="persistenceUnitName" value="service-app"/>-->
+        <!--<property name="dataSource" ref="IcaDataSource"/>-->
+        <!--<property name="jpaVendorAdapter" ref="jpaVendorAdapter" />-->
+        <!--<property name="jpaDialect" ref="jpaDialect" />-->
+        <!--<property name="packagesToScan" value="cn.dongyeshengzhenhengzhen.framework.*"/>-->
+        <!--<property name="jpaProperties">-->
+            <!--<props>-->
+                <!--<prop key="hibernate.dialect">org.hibernate.dialect.MySQLDialect</prop>-->
+                <!--<prop key="hibernate.connection.allowMultiQueries">true</prop>-->
+                <!--<prop key="current_session_context_class">thread</prop>-->
+                <!--<prop key="hibernate.show_sql">false</prop>-->
+                <!--<prop key="hibernate.format_sql">false</prop>-->
+                <!--<prop key="hibernate.default_entity_mode">dynamic-map</prop>-->
+                <!--<prop key="javax.persistence.validation.mode">none</prop>-->
+                <!--<prop key="hibernate.ejb.entitymanager_factory_name">defaultEntityManagerFactory</prop>-->
+                <!--<prop key="hibernate.physical_naming_strategy">cn.dongyeshengzhenhengzhen.framework.orm.hibernate.ImprovedNamingStrategy</prop>-->
+            <!--</props>-->
+        <!--</property>-->
+    <!--</bean>-->
+
+
+
+
+
+
+    <tx:advice id="txAdvice" transaction-manager="transactionManagerMySql">
+        <tx:attributes>
+            <tx:method name="start*" propagation="REQUIRED"/>
+            <tx:method name="execute*" propagation="REQUIRED"/>
+            <tx:method name="save*" propagation="REQUIRED"/>
+            <tx:method name="delete*" propagation="REQUIRED" />
+            <tx:method name="update*" propagation="REQUIRED" />
+            <tx:method name="remove*" propagation="REQUIRED" />
+            <tx:method name="assign*" propagation="REQUIRED" />
+            <tx:method name="create*" propagation="REQUIRED" />
+            <tx:method name="complete*" propagation="REQUIRED" />
+            <tx:method name="finish*" propagation="REQUIRED" />
+            <tx:method name="terminate*" propagation="REQUIRED" />
+            <tx:method name="take*" propagation="REQUIRED" />
+            <tx:method name="deploy*" propagation="REQUIRED" />
+            <tx:method name="undeploy*" propagation="REQUIRED" />
+            <tx:method name="redeploy*" propagation="REQUIRED" />
+            <tx:method name="submit*" propagation="REQUIRED" rollback-for="java.lang.Exception"/>
+
+            <tx:method name="get*" propagation="REQUIRED" read-only="true" />
+            <tx:method name="find*" propagation="REQUIRED" read-only="true" />
+            <tx:method name="query*" propagation="REQUIRED" read-only="true" />
+            <tx:method name="search*" propagation="REQUIRED" read-only="true" />
+            <tx:method name="is*" propagation="REQUIRED" read-only="true" />
+            <tx:method name="*" propagation="REQUIRED" />
+        </tx:attributes>
+    </tx:advice>
+
+    <aop:config>
+        <aop:advisor advice-ref="txAdvice" pointcut="execution(* org.snaker.engine.core..*.*(..))
+		or execution(* cn.dongyeshengzhen.framework.*.service..*.*(..))"/>
+    </aop:config>
+    <aop:aspectj-autoproxy proxy-target-class="true" />
+
+    <!-- 消息中介-->
+    <bean id="connectionFactory" class="org.apache.activemq.ActiveMQConnectionFactory">
+        <property name="brokerURL" value="vm://localhost?brokerConfig=xbean:Activemq.xml"/>
+        <property name="trustAllPackages" value="true"/>
+    </bean>
+
+    <!-- 日子很队列目的地-->
+    <bean id="logQueue" class="org.apache.activemq.command.ActiveMQQueue">
+        <constructor-arg index="0" value="logQueue"/>
+    </bean>
+    <bean id="logJmsTemplate" class="org.springframework.jms.core.JmsTemplate">
+        <property name="connectionFactory" ref="connectionFactory"/>
+        <!-- 设置默认的消息目的地-->
+        <property name="defaultDestination" ref="logQueue"/>
+        <!-- 由于receiver方法是同步的，所以我们在这里对接收设置超时时间-->
+        <property name="receiveTimeout" value="60000"/>
+        <!-- 设置持久化模式   1非持久化  2 持久化-->
+        <property name="deliveryMode" value="1"/>
+    </bean>
+    <!-- 消息接收监听器用于异步接收消息-->
+
+
+</beans>

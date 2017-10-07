@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<config>
+	<bean name="extTask" class="cn.dongyeshengzhen.framework.flow.ext.ExtTaskParser"/>
+	<bean class="org.snaker.engine.access.dialect.MySqlDialect"/>
+	<bean class="org.snaker.engine.impl.LogInterceptor"/>
+	<bean class="org.snaker.engine.spring.SpelExpression"/>
+	<bean class="org.snaker.engine.impl.SurrogateInterceptor"/>
+	<bean class="cn.dongyeshengzhen.framework.flow.CustomAccessStrategy"/>
+</config>

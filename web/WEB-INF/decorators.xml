@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<decorators defaultdir="/WEB-INF/decorators">
+    <excludes>
+        <pattern>/resource*</pattern>
+        <pattern>/login*</pattern>
+    </excludes>
+    <!-- 用来定义装饰器要过滤的页面 -->
+    <decorator name="admn" page="adminIndex.jsp">
+        <pattern>/admin*</pattern>
+    </decorator>
+    <decorator name="main" page="index.jsp">
+        <pattern>/*</pattern>
+    </decorator>
+
+</decorators>

@@ -1,0 +1,33 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>login</title>
+	<meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+	<link rel="stylesheet" href="/resource/login/css/login.css" />
+</head>
+
+<body>
+<form id="form" action="${ctx}/login" method="post">
+<div class="sm_loginmain">
+	<div class="sm_logo"></div>
+	<div class="sm_loginuser">
+		<div class="sm_loginusericon"></div>
+		<input type="text" name="loginName" class="sm_logininput">
+	</div>
+	<div class="sm_loginpassword">
+		<div class="sm_loginpasswordicon"></div>
+		<input type="password" name="password" class="sm_logininput">
+	</div>
+	<div class="sm_loginpassword">
+		<input type="checkbox" name="remember" id="remember" /> <label
+			id="remember-label" for="remember">记住我</label>
+		<label>[admin/123456;snaker/123456;test/123456]</label>
+	</div>
+	<div class="sm_loginbuttn"><a href="#" onclick="form.submit();"><img src="/resource/login/images/loginbutton.jpg" width="90%" height="40" alt=""/></a></div>
+</div>
+<div class="sm_bgline"></div>
+</form>
+</body>
+</html>

@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+    <!-- 配置c3p0数据源 -->
+
+    <bean id="defaultEntityManagerFactory" class="org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean">
+        <property name="jpaVendorAdapter" ref="jpaVendorAdapter" />
+        <property name="jpaDialect" ref="jpaDialect" />
+        <property name="persistenceUnitName" value="user_unit"/>
+        <property name="packagesToScan" value="cn.dongyeshengzhen"/>
+        <property name="jpaProperties">
+            <props>
+                <prop key="hibernate.dialect">org.hibernate.dialect.MySQL5Dialect</prop>
+                <prop key="hibernate.connection.driver_class">com.mysql.jdbc.Driver</prop>
+                <prop key="hibernate.connection.url">jdbc:mysql://123.207.159.53/bdmri?characterEncoding=utf-8</prop>
+                <prop key="hibernate.connection.username">root</prop>
+                <prop key="hibernate.connection.password">PASS@word1</prop>
+                <prop key="hibernate.connection.allowMultiQueries">true</prop>
+                <prop key="hibernate.connection.provider_class">org.hibernate.c3p0.internal.C3P0ConnectionProvider</prop>
+                <prop key="hibernate.c3p0.min_size">5</prop>
+                <prop key="hibernate.c3p0.max_size">200</prop>
+                <prop key="hibernate.c3p0.max_statements">200</prop>
+                <prop key="hibernate.c3p0.testConnectionOnCheckin">false</prop>
+                <prop key="hibernate.c3p0.testConnectionOnCheckout">true</prop>
+                <prop key="hibernate.c3p0.preferredTestQuery">SELECT 1</prop>
+                <prop key="current_session_context_class">thread</prop>
+                <prop key="hibernate.max_fetch_depth">3</prop>
+                <prop key="hibernate.jdbc.fetch_size">18</prop>
+                <prop key="hibernate.jdbc.batch_size">10</prop>
+                <prop key="hibernate.show_sql">true</prop>
+                <prop key="hibernate.format_sql">false</prop>
+                <prop key="hibernate.default_entity_mode">dynamic-map</prop>
+                <prop key="javax.persistence.validation.mode">none</prop>
+                <prop key="hibernate.physical_naming_strategy">cn.dongyeshengzhen.framework.orm.hibernate.ImprovedNamingStrategy</prop>
+            </props>
+        </property>
+    </bean>
+
+</beans>

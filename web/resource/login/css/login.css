@@ -1,0 +1,85 @@
+@charset "utf-8";
+/* CSS Document */
+html, body {
+	width: 100%;
+	height: 100%;
+	margin: 0;
+	padding: 0;
+}
+body {
+	background-color:#f3fffe;
+}
+img {
+	border:none;
+}
+table {
+	border-collapse:collapse;
+}
+.sm_loginmain {
+	position:absolute;
+	width:250px;
+	height:260px;
+	top:50%;
+	margin-top:-130px;
+	left:50%;
+	margin-left:-125px;
+	z-index:1000;
+}
+.sm_bgline {
+	position:absolute;
+	width:100%;
+	height:260px;
+	background-color:#00ab98;
+	top:50%;
+	margin-top:-130px;
+	z-index:1;
+}
+.sm_logo {
+	position:absolute;
+	/*background:url(../images/logo.png) no-repeat;*/
+	width:180px;
+	height:122px;
+	margin-left:35px;
+	margin-top:-160px;
+}
+.sm_logintitle {
+	width:250px;
+	height:110px;
+	margin-left:50px;
+	margin-top:45px;
+}
+.sm_loginuser {
+	width:250px;
+	height:40px;
+	margin-top:40px;
+}
+.sm_loginusericon {
+	width:40px;
+	height:40px;
+	background: url(../images/usericon.jpg) no-repeat;
+	float:left;
+}
+.sm_logininput {
+	width:188px;
+	height:14px;
+	border:none;
+	font-size:12px;
+	background-color:#eeeef4;
+	padding:13px 10px 13px 10px;
+}
+.sm_loginpassword {
+	width:250px;
+	height:40px;
+	margin-top:30px;
+}
+.sm_loginpasswordicon {
+	width:40px;
+	height:40px;
+	background: url(../images/passwordicon.jpg) no-repeat;
+	float:left;
+}
+.sm_loginbuttn {
+	width:250px;
+	height:40px;
+	margin-top:30px;
+}

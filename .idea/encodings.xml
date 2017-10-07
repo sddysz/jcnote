@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="Encoding">
+    <file url="file://$PROJECT_DIR$/src/main/resources/database/crm-change.sql" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/web/resource/images/state_grey.png" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/web/resource/images/usericon.png" charset="GBK" />
+    <file url="PROJECT" charset="UTF-8" />
+  </component>
+</project>
