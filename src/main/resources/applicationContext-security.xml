@@ -19,6 +19,8 @@
                 /resource/* = anon
                 /nv*/* = anon
                 /index*=anon
+                /note*=anon
+                /note*/**=anon
                 /admin*/**=authc
             </value>
         </property>

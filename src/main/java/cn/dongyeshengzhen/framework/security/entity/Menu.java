@@ -24,12 +24,12 @@ public class Menu {
     private String url;
     private Integer display_footer;
 
-    @JsonIgnore
-    @OneToMany(fetch = FetchType.EAGER)
-    @Fetch(FetchMode.SUBSELECT)//采用子查询抓取，避免1+n次查询
-    @JoinColumn(name = "navId")
-    @OrderBy(value = "orderId ASC,updateTime DESC")
-    List contentTypeList;
+//    @JsonIgnore
+//    @OneToMany(fetch = FetchType.EAGER)
+//    @Fetch(FetchMode.SUBSELECT)//采用子查询抓取，避免1+n次查询
+//    @JoinColumn(name = "navId")
+//    @OrderBy(value = "orderId ASC,updateTime DESC")
+//    List contentTypeList;
 
     public Integer getId() {
         return id;
@@ -55,13 +55,13 @@ public class Menu {
         this.displayName = displayName;
     }
 
-    public List getContentTypeList() {
-        return contentTypeList;
-    }
-
-    public void setContentTypeList(List contentTypeList) {
-        this.contentTypeList = contentTypeList;
-    }
+//    public List getContentTypeList() {
+//        return contentTypeList;
+//    }
+//
+//    public void setContentTypeList(List contentTypeList) {
+//        this.contentTypeList = contentTypeList;
+//    }
 
     public Integer getOrder() {
         return order;

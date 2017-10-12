@@ -1,7 +1,7 @@
-package cn.dongyeshengzhen.cloudnote.user.service;
+package cn.dongyeshengzhen.cloudnote.note.service;
 
-import cn.dongyeshengzhen.cloudnote.user.dao.UserDao;
-import cn.dongyeshengzhen.cloudnote.user.entity.User;
+import cn.dongyeshengzhen.cloudnote.note.dao.NoteDao;
+import cn.dongyeshengzhen.cloudnote.note.entity.Note;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -9,15 +9,15 @@ import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 
 @Service
-public class UserManager {
+public class NoteManager {
 
     @Autowired
-    UserDao userDao;
+    NoteDao noteDao;
     @PersistenceContext(unitName = "user_unit")
     protected EntityManager entityManager;
 
-    public User findOne(Integer id) {
-        return userDao.findOne(id);
+    public Note findOne(Integer id) {
+        return noteDao.findOne(id);
     }
 
 }

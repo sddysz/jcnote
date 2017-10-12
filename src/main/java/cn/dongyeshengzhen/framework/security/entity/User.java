@@ -12,7 +12,7 @@ import javax.persistence.Transient;
  * @since 0.1
  */
 @Entity
-@Table(name = "user")
+@Table(name = "t_user")
 public class User extends SecurityEntity {
     private static final long serialVersionUID = 7446802057673100315L;
     //系统管理员账号类型
@@ -31,7 +31,7 @@ public class User extends SecurityEntity {
     //用户姓名
     private String fullname;
 
-    @Column(name = "username", unique = true, nullable = false, length = 50)
+    @Column(name = "email", unique = true, nullable = false, length = 50)
     public String getUsername() {
         return username;
     }
@@ -40,7 +40,7 @@ public class User extends SecurityEntity {
         this.username = username;
     }
 
-    @Column(name = "password", length = 50)
+    @Column(name = "pwd", length = 50)
     public String getPassword() {
         return password;
     }
@@ -49,7 +49,7 @@ public class User extends SecurityEntity {
         this.password = password;
     }
 
-    @Column(name = "fullname", length = 100)
+    @Column(name = "username", length = 100)
     public String getFullname() {
         return fullname;
     }

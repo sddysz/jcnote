@@ -11,7 +11,8 @@ public class FileSystemUtil {
      * @return
      */
     public static String getWebRootLocalPath(){
-        String webRootLocalPath = System.getProperty("webAppRootDir");
+//        String webRootLocalPath = System.getProperty("webAppRootDir");
+        String webRootLocalPath ="";
         if(isWindows()){
             webRootLocalPath = "/" + webRootLocalPath.replace("\\", "/");
         }

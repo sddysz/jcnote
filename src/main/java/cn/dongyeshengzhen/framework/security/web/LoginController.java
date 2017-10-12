@@ -1,5 +1,6 @@
 package cn.dongyeshengzhen.framework.security.web;
 
+import cn.dongyeshengzhen.framework.model.MsgModel;
 import cn.dongyeshengzhen.framework.security.entity.User;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
@@ -13,6 +14,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 import javax.servlet.http.HttpServletRequest;
 
@@ -21,7 +23,8 @@ public class LoginController {
     private static Log log = LogFactory.getLog(LoginController.class);
 
     @RequestMapping(value = "/login", method = RequestMethod.POST)
-    public String login(User user, Model model, HttpServletRequest request) {
+    public String login(User user, String captcha,Model model, HttpServletRequest request) {
+
         log.info("Login user=====" + user);
         Subject subject = SecurityUtils.getSubject();
         UsernamePasswordToken token = new UsernamePasswordToken(user.getUsername(), user.getPassword());
@@ -32,7 +35,7 @@ public class LoginController {
                 token.setRememberMe(true);
             }
             subject.login(token);
-            return "redirect:/admin";
+            return "redirect:/note";
         } catch (UnknownAccountException ue) {
             token.clear();
             model.addAttribute("error", "登录失败，您输入的账号不存在");
@@ -54,4 +57,6 @@ public class LoginController {
     public String loginForm() {
         return "login";
     }
+
+
 }

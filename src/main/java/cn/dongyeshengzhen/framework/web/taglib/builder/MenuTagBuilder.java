@@ -57,11 +57,11 @@ public class MenuTagBuilder implements TagBuilder {
         for (int i = 0; i < menus.size(); i++) {
             Menu m = menus.get(i);
             buffer.append("<a class='");
-            if (m.getContentTypeList().isEmpty()) {
-                buffer.append("singleNav' ");
-            } else {
-                buffer.append("mainNav' ");
-            }
+//            if (m.getContentTypeList().isEmpty()) {
+//                buffer.append("singleNav' ");
+//            } else {
+//                buffer.append("mainNav' ");
+//            }
             buffer.append("href='/nav_").append(m.getName()).append("'").append("id='nav").append(m.getId()).append("'>");
             buffer.append(m.getDisplayName()).append("</a>");
 
@@ -81,10 +81,10 @@ public class MenuTagBuilder implements TagBuilder {
             StringBuffer hideMenuBuffer = new StringBuffer();
             Menu m = menus.get(i);
             hideMenuBuffer.append("<div for='nav" + m.getId() + "'>");
-            for (int j = 0; j < m.getContentTypeList().size(); j++) {
-            hideMenuBuffer.append("</div>");
-            buffer.append(hideMenuBuffer);
-        }
+//            for (int j = 0; j < m.getContentTypeList().size(); j++) {
+//            hideMenuBuffer.append("</div>");
+//            buffer.append(hideMenuBuffer);
+//        }
         buffer.append("</div>" +
                 "</div>");
 
@@ -96,15 +96,15 @@ public class MenuTagBuilder implements TagBuilder {
         for (int i = 0; i < menus.size(); i++) {
             StringBuffer hideMenuBuffer = new StringBuffer();
             Menu m = menus.get(i);
-            if (m.getContentTypeList().isEmpty()) {
-                buffer.append("<a href=\"/nav_").append(m.getName()).append("\">").append(m.getDisplayName()).append("</a>");
-            } else {
-                hideMenuBuffer.append("<span class=\"menuhide_span\">").append(m.getDisplayName()).append("<h1 style=\"display: none;\">");
-                for (int j = 0; j < m.getContentTypeList().size(); j++) {
-                }
-                hideMenuBuffer.append("</h1>\n </span>");
-                buffer.append(hideMenuBuffer);
-            }
+//            if (m.getContentTypeList().isEmpty()) {
+//                buffer.append("<a href=\"/nav_").append(m.getName()).append("\">").append(m.getDisplayName()).append("</a>");
+//            } else {
+//                hideMenuBuffer.append("<span class=\"menuhide_span\">").append(m.getDisplayName()).append("<h1 style=\"display: none;\">");
+//                for (int j = 0; j < m.getContentTypeList().size(); j++) {
+//                }
+//                hideMenuBuffer.append("</h1>\n </span>");
+//                buffer.append(hideMenuBuffer);
+//            }
         }
         buffer.append("</div> \n </div>");
 

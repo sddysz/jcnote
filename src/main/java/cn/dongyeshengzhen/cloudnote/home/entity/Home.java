@@ -1,18 +1,19 @@
-package cn.dongyeshengzhen.cloudnote.user.entity;
+package cn.dongyeshengzhen.cloudnote.home.entity;
 
-import javax.persistence.*;
 import java.util.Date;
 
-@Entity
-@Table(name = "content")
-public class User {
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+
+public class Home {
+
     private Integer id;
     private String email;
-    private Boolean is_active;
+    private Boolean isActive;
     private String pwd;
+    //明文密码
+    //salt
+    private String salt;
     private String username;
+    private String nickname;
     private String usernameRaw;
     private Date createTime;
 

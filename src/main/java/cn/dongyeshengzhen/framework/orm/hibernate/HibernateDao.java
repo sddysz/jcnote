@@ -48,7 +48,7 @@
 //	 * 用于Dao层子类的构造函数.
 //	 * 通过子类的泛型定义取得对象类型Class.
 //	 * eg.
-//	 * public class UserDao extends HibernateDao<User, Long>{
+//	 * public class UserDataDao extends HibernateDao<UserData, Long>{
 //	 * }
 //	 */
 //	public HibernateDao() {
@@ -59,7 +59,7 @@
 //	 * 用于省略Dao层, Service层直接使用通用HibernateDao的构造函数.
 //	 * 在构造函数中定义对象类型Class.
 //	 * eg.
-//	 * HibernateDao<User, Long> userDao = new HibernateDao<User, Long>(sessionFactory, User.class);
+//	 * HibernateDao<UserData, Long> userDao = new HibernateDao<UserData, Long>(sessionFactory, UserData.class);
 //	 */
 //	public HibernateDao(final SessionFactory sessionFactory, final Class<T> entityClass) {
 //		super(sessionFactory, entityClass);
