@@ -1,0 +1,120 @@
+.btn-weixin {
+    color: #ffffff;
+    background-color: #00c217;
+    border-color: rgba(0, 0, 0, 0.2);
+}
+.btn-weixin:focus,
+.btn-weixin.focus {
+    color: #ffffff;
+    background-color: #46c50d;
+    border-color: rgba(0, 0, 0, 0.2);
+}
+.btn-weixin:hover {
+    color: #ffffff;
+    background-color: #21c111;
+    border-color: rgba(0, 0, 0, 0.2);
+}
+.btn-weixin:active,
+.btn-weixin.active,
+.open > .dropdown-toggle.btn-weixin {
+    color: #ffffff;
+    background-color: #1fc510;
+    border-color: rgba(0, 0, 0, 0.2);
+}
+.btn-weixin:active,
+.btn-weixin.active,
+.open > .dropdown-toggle.btn-weixin {
+    background-image: none;
+}
+.btn-weixin .badge {
+    color: #00c217;
+    background-color: #ffffff;
+}
+.btn-weixin:focus,
+.btn-weixin.focus {
+    color: #ffffff;
+    background-color: #46c50d;
+    border-color: rgba(0, 0, 0, 0.2);
+}
+.btn-weixin:hover {
+    color: #ffffff;
+    background-color: #21c111;
+    border-color: rgba(0, 0, 0, 0.2);
+}
+.btn-weixin:active,
+.btn-weixin.active,
+.open > .dropdown-toggle.btn-weixin {
+    color: #ffffff;
+    background-color: #1fc510;
+    border-color: rgba(0, 0, 0, 0.2);
+}
+.btn-weixin:active,
+.btn-weixin.active,
+.open > .dropdown-toggle.btn-weixin {
+    background-image: none;
+}
+.btn-weixin .badge {
+    color: #1fc510;
+    background-color: #ffffff;
+}
+
+
+.btn-qq {
+    color: #ffffff;
+    background-color: #186eda;
+    border-color: rgba(0, 0, 0, 0.2);
+}
+.btn-qq:focus,
+.btn-qq.focus {
+    color: #ffffff;
+    background-color: #186eda;
+    border-color: rgba(0, 0, 0, 0.2);
+}
+.btn-qq:hover {
+    color: #ffffff;
+    background-color: #186eda;
+    border-color: rgba(0, 0, 0, 0.2);
+}
+.btn-qq:active,
+.btn-qq.active,
+.open > .dropdown-toggle.btn-qq {
+    color: #ffffff;
+    background-color: #186eda;
+    border-color: rgba(0, 0, 0, 0.2);
+}
+.btn-qq:active,
+.btn-qq.active,
+.open > .dropdown-toggle.btn-qq {
+    background-image: none;
+}
+.btn-qq .badge {
+    color: #186eda;
+    background-color: #ffffff;
+}
+.btn-qq:focus,
+.btn-qq.focus {
+    color: #ffffff;
+    background-color: #186eda;
+    border-color: rgba(0, 0, 0, 0.2);
+}
+.btn-qq:hover {
+    color: #ffffff;
+    background-color: #186eda;
+    border-color: rgba(0, 0, 0, 0.2);
+}
+.btn-qq:active,
+.btn-qq.active,
+.open > .dropdown-toggle.btn-qq {
+    color: #ffffff;
+    background-color: #186eda;
+    border-color: rgba(0, 0, 0, 0.2);
+}
+.btn-qq:active,
+.btn-qq.active,
+.open > .dropdown-toggle.btn-qq {
+    background-image: none;
+}
+.btn-qq .badge {
+    color: #186eda;
+    background-color: #ffffff;
+}

@@ -103,7 +103,7 @@
             </a>
             <div class="navbar-custom-menu">
                 <ul class="nav navbar-nav">
-                    <!-- User Account: style can be found in dropdown.less -->
+                    <!-- UserData Account: style can be found in dropdown.less -->
                     <li class="dropdown notifications-menu ">
                         <a href="javascript:void(0);" class="dropdown-toggle " data-toggle="dropdown">
                             <i class="fa fa-gears"></i>
