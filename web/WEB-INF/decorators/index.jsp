@@ -77,13 +77,13 @@
 
 <sitemesh:body></sitemesh:body>
 
-<div id="footer">
-    <div class="page-header">
-        <h1>Example page header
-            <small>Subtext for header</small>
-        </h1>
+<footer class="main-footer">
+    <div class="pull-right hidden-xs">
+        <b>Version</b> 0.0.1
     </div>
-</div>
+    <strong>Copyright © 2017-2017 <a href="https://#">dysz' cloudnote</a>.</strong> All rights
+    reserved.
+</footer>
 
 
 <script src="/resource/bower_components/jquery/dist/jquery.js"></script>

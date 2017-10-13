@@ -3,6 +3,7 @@
     <excludes>
         <pattern>/resource*</pattern>
         <pattern>/login*</pattern>
+        <pattern>/note*</pattern>
     </excludes>
     <!-- 用来定义装饰器要过滤的页面 -->
     <decorator name="admn" page="adminIndex.jsp">
