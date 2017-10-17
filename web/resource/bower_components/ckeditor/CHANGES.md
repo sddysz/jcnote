@@ -53,7 +53,7 @@ Other Changes:
 
 * Updated the [SCAYT](http://ckeditor.com/addon/scayt) (Spell Check As You Type) plugin:
 	* [#148](https://github.com/WebSpellChecker/ckeditor-plugin-scayt/issues/148): Fixed: SCAYT leaves underlined word after the CKEditor Replace dialog corrects it.
-* [#751](https://github.com/ckeditor/ckeditor-dev/issues/751): Added the [`CKEDITOR.dom.nodeList.toArray`](https://docs.ckeditor.com/#!/api/CKEDITOR.dom.nodeList-method-toArray) method which returns an array representation of a [node list](https://docs.ckeditor.com/#!/api/CKEDITOR.dom.nodeList).
+* [#751](https://github.com/ckeditor/ckeditor-dev/issues/751): Added the [`CKEDITOR.dom.children.toArray`](https://docs.ckeditor.com/#!/api/CKEDITOR.dom.children-method-toArray) method which returns an array representation of a [node list](https://docs.ckeditor.com/#!/api/CKEDITOR.dom.children).
 
 ## CKEditor 4.7.1
 

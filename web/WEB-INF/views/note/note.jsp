@@ -102,9 +102,9 @@
                                 <img src="dist/img/user2-160x160.jpg" class="img-circle" alt="User Image">
 
                                 <p>
-                                dysz
+                                    dysz
 
-                            </p>
+                                </p>
                             </li>
                             <!-- Menu Body -->
 
@@ -162,7 +162,7 @@
                 </div>
 
 
-               </ul>
+            </ul>
         </section>
         <!-- /.sidebar -->
     </aside>
@@ -193,7 +193,6 @@
     </footer>
 
 
-
 </div>
 <!-- ./wrapper -->
 
@@ -203,21 +202,23 @@
 <script src="/resource/adminLTE/js/adminlte.js"></script>
 <script src="/resource/plugins/jstree/jstree.js"></script>
 <script>
-    $(function() {
+    $(function () {
         $('#container').jstree({
-            'core' : {
-                'data' : [
-                    { "text" : "Root node", "children" : [
-                        { "text" : "Child node 1" ,"children":[
-                            { "text" : "Child node 2" }
-                        ]},
-                        { "text" : "Child node 2" }
-                    ]
-                    }
-                ],
-                "check_callback" : true
+
+            "plugins": ["dnd", "contextmenu", "types", "themes", "state"],
+            "types": {
+                "default": {
+                    "icon": false // 删除默认图标
+                },
             },
-            "plugins" : ["dnd","contextmenu"]
+            'core': {
+                'data': {
+                    "url": "/notebook/getList",
+                    "dataType": "json"
+                },
+                "themes": {"stripes": true},
+                "check_callback": true
+            }
         });
     });
 

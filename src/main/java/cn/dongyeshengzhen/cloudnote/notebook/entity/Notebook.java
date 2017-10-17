@@ -1,11 +1,13 @@
 package cn.dongyeshengzhen.cloudnote.notebook.entity;
 
 import javax.persistence.*;
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 
 @Entity
 @Table(name = "t_notebook")
-public class Notebook {
+public class Notebook implements Comparable<Notebook> {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer notebookId;
@@ -21,6 +23,34 @@ public class Notebook {
     private Date updatedTime;
     private Integer usn;
     private Boolean isDeleted;
+    @Transient
+    private List<Notebook> subNotebooks;
+
+
+    @Override
+    public int compareTo(Notebook o) {
+        int i = this.getSeq() - o.getSeq();//先按照seq排序
+        if (i == 0) {
+            return this.getTitle().compareTo(o.getTitle());//如果seq相等了再用title进行排序
+        }
+        return 0;
+    }
+
+
+    public NotebookNode convert2Node() {
+
+        NotebookNode node = new NotebookNode();
+        node.setId(this.getNotebookId());
+        node.setText(this.getTitle());
+        if (this.getSubNotebooks() != null && !this.getSubNotebooks().isEmpty()) {
+            List<NotebookNode> nodeList = new ArrayList<>();
+            for (Notebook notebook : this.getSubNotebooks()) {
+                nodeList.add(notebook.convert2Node());
+            }
+            node.setChildren(nodeList);
+        }
+        return node;
+    }
 
     public Integer getNotebookId() {
         return notebookId;
@@ -124,5 +154,13 @@ public class Notebook {
 
     public void setDeleted(Boolean deleted) {
         isDeleted = deleted;
+    }
+
+    public List<Notebook> getSubNotebooks() {
+        return subNotebooks;
+    }
+
+    public void setSubNotebooks(List<Notebook> subNotebooks) {
+        this.subNotebooks = subNotebooks;
     }
 }
