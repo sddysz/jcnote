@@ -7,7 +7,7 @@ import org.springframework.data.jpa.repository.JpaSpecificationExecutor;
 import org.springframework.stereotype.Repository;
 
 @Repository
-public interface NoteDao extends JpaRepository<Note, Integer>, JpaSpecificationExecutor<Note> {
+public interface NoteDao extends JpaRepository<Note, Integer>, JpaSpecificationExecutor<Note> ,NoteDaoExtend{
 
 }
 

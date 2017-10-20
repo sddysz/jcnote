@@ -202,8 +202,21 @@
 <script src="/resource/adminLTE/js/adminlte.js"></script>
 <script src="/resource/plugins/jstree/jstree.js"></script>
 <script>
+    var totalpage=1;
+    var curPage=1;
+
     $(function () {
-        $('#container').jstree({
+        $('#container').on('changed.jstree', function (e, data) {
+            notebookId = data.node.id;
+            $.get("/note/getNotePage", {pageNumber: 1,notebookId: notebookId},
+                function (data, status) {
+                    totalpage = data.totalPages;
+                    curPage = data.number + 1;
+                    console.log(data);
+                });
+
+
+        }).jstree({
 
             "plugins": ["dnd", "contextmenu", "types", "themes", "state"],
             "types": {
