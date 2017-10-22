@@ -45,5 +45,10 @@ public class NoteController {
         return noteManager.findPage(pageNumber, notebookId);
     }
 
+    @RequestMapping(value = "getNote")
+    @ResponseBody
+    public Note getNote(Model model,  Integer noteId) {
+        return noteManager.findOne( noteId);
+    }
 
 }

@@ -96,3 +96,23 @@ ALTER TABLE t_note
 ALTER TABLE t_note
   ADD FOREIGN KEY (user_id) REFERENCES t_user (id)
   ON DELETE RESTRICT;
+
+
+CREATE TABLE `t_note_content` (
+  `id`         INT UNSIGNED NOT NULL AUTO_INCREMENT,
+  `note_id`         INT UNSIGNED NOT NULL,
+  `user_id`         INT UNSIGNED NOT NULL,
+  `is_blog` INT UNSIGNED NULL,
+  `created_time`     DATETIME NULL,
+  `updated_time`     DATETIME NULL,
+  `abstracts`     TEXT ,
+  `content`     TEXT ,
+  `updated_user_id`         INT UNSIGNED NOT NULL,
+  PRIMARY KEY (`id`)
+);
+ALTER TABLE t_note_content
+  ADD FOREIGN KEY (note_id) REFERENCES t_note (note_id)
+  ON DELETE RESTRICT;
+ALTER TABLE t_note_content
+  ADD FOREIGN KEY (user_id) REFERENCES t_user (id)
+  ON DELETE RESTRICT;

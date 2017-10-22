@@ -25,6 +25,7 @@
     <link href="/resource/adminLTE/css/AdminLTE.css" rel="stylesheet">
     <link rel="stylesheet" href="/resource/adminLTE/css/skins/_all-skins.min.css">
     <link rel="stylesheet" href="/resource/plugins/jstree/themes/default/style.css">
+    <link rel="stylesheet" href="/resource/css/note.css">
 
 </head>
 <body class="skin-blue sidebar-mini" style="height: auto; min-height: 100%;">
@@ -128,70 +129,147 @@
 
         </nav>
     </header>
-    <!-- Left side column. contains the logo and sidebar -->
-    <aside class="main-sidebar">
-        <!-- sidebar: style can be found in sidebar.less -->
-        <section class="sidebar" style="height: auto;">
-            <!-- Sidebar user panel -->
-            <div class="user-panel">
-                <div class="pull-left image">
-                    <img src="/resource/adminLTE/img/user2-160x160.jpg" class="img-circle" alt="User Image">
-                </div>
-                <div class="pull-left info">
-                    <p>Alexander </p>
-                    <a href="#"><i class="fa fa-circle text-success"></i> Online</a>
-                </div>
-            </div>
-            <!-- search form -->
-            <form action="#" method="get" class="sidebar-form">
-                <div class="input-group">
-                    <input type="text" name="q" class="form-control" placeholder="Search...">
-                    <span class="input-group-btn">
+
+    <div class="content-wrapper" style="min-height: 960px;">
+
+        <!-- Left side column. contains the logo and sidebar -->
+
+
+        <div id="mainContainer" class="clearfix">
+
+
+            <aside class="main-sidebar">
+                <!-- sidebar: style can be found in sidebar.less -->
+                <section class="sidebar" style="height: auto;">
+
+                    <!-- search form -->
+                    <form action="#" method="get" class="sidebar-form">
+                        <div class="input-group">
+                            <input type="text" name="q" class="form-control" placeholder="Search...">
+                            <span class="input-group-btn">
                 <button type="submit" name="search" id="search-btn" class="btn btn-flat">
                   <i class="fa fa-search"></i>
                 </button>
               </span>
+                        </div>
+                    </form>
+                    <!-- /.search form -->
+                    <!-- sidebar menu: : style can be found in sidebar.less -->
+                    <ul class="sidebar-menu tree" data-widget="tree">
+                        <li class="header">MAIN NAVIGATION</li>
+                        <div id="container">
+
+                        </div>
+
+
+                    </ul>
+                </section>
+                <!-- /.sidebar -->
+            </aside>
+            <div class="noteSplit" id="notebookSplitter"></div>
+
+            <div id="noteAndEditor">
+
+                <div id="noteList">
+                    <div class="clearfix" id="notesAndSort" style="position: relative">
+                        <div class="pull-left">
+                            <!-- 我的笔记本 -->
+                            <div class="dropdown" id="myNotebookNavForListNav">
+                                <a class="ios7-a">
+                                    <span id="curNotebookForListNote">msg . all</span>
+                                </a>
+                            </div>
+
+                            <!-- 共享的笔记本 -->
+                            <div class="dropdown" id="sharedNotebookNavForListNav" style="display: none">
+                                <a class="ios7-a">
+                                    <span id="curSharedNotebookForListNote">msg . all</span>
+                                </a>
+                            </div>
+                        </div>
+                        <!-- tag search -->
+                        <div class="pull-left" id="tagSearch"></div>
+                        <!-- sort type -->
+                        <div id="sortType">
+                            <div class="dropdown">
+                                <a class="ios7-a dropdown-toggle" id="dropdownMenu1"
+                                   data-toggle="dropdown">
+                                    </i><i class="fa fa-th-list"></i>
+                                </a>
+                                <ul class="dropdown-menu" role="menu"
+                                    aria-labelledby="dropdownMenu1"
+                                >
+                                    <li role="presentation"><a data-view="snippet" class="view-style view-snippet"
+                                                               role="menuitem">
+                                        <i class="fa fa-check"></i>
+                                        Snippet View
+                                    </a></li>
+                                    <li role="presentation"><a data-view="list" class="view-style view-list"
+                                                               role="menuitem">
+                                        <i class="fa fa-check"></i>
+                                        List View
+                                    </a></li>
+                                    <li role="presentation" class="divider"></li>
+                                    <li role="presentation"><a data-sorter="dateCreatedASC"
+                                                               class="sorter-style sorter-dateCreatedASC"
+                                                               role="menuitem">
+                                        <i class="fa fa-check"></i>
+                                        Date Created <i class="fa fa-sort-alpha-asc"></i>
+                                    </a></li>
+                                    <li role="presentation"><a data-sorter="dateCreatedDESC"
+                                                               class="sorter-style sorter-dateCreatedDESC"
+                                                               role="menuitem">
+                                        <i class="fa fa-check"></i>
+                                        Date Created <i class="fa fa-sort-alpha-desc"></i>
+                                    </a></li>
+                                    <li role="presentation" class="divider"></li>
+                                    <li role="presentation"><a data-sorter="dateUpdatedASC"
+                                                               class="sorter-style sorter-dateUpdatedASC"
+                                                               role="menuitem">
+                                        <i class="fa fa-check"></i>
+                                        Date Updated <i class="fa fa-sort-alpha-asc"></i>
+                                    </a></li>
+                                    <li role="presentation"><a data-sorter="dateUpdatedDESC"
+                                                               class="sorter-style sorter-dateUpdatedDESC checked"
+                                                               role="menuitem">
+                                        <i class="fa fa-check"></i>
+                                        Date Updated <i class="fa fa-sort-alpha-desc"></i>
+                                    </a></li>
+                                    <li role="presentation" class="divider"></li>
+                                    <li role="presentation"><a data-sorter="titleASC"
+                                                               class="sorter-style sorter-titleASC" role="menuitem">
+                                        <i class="fa fa-check"></i>
+                                        Title <i class="fa fa-sort-alpha-asc"></i>
+
+                                    </a></li>
+                                    <li role="presentation"><a data-sorter="titleDESC"
+                                                               class="sorter-style sorter-titleDESC" role="menuitem">
+                                        <i class="fa fa-check"></i>
+                                        Title <i class="fa fa-sort-alpha-desc"></i>
+                                    </a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- 笔记列表 -->
+                    <!-- wrap 为了slimScroll -->
+                    <div id="noteItemListWrap">
+                        <ul id="noteItemList">
+
+
+                        </ul>
+                    </div>
                 </div>
-            </form>
-            <!-- /.search form -->
-            <!-- sidebar menu: : style can be found in sidebar.less -->
-            <ul class="sidebar-menu tree" data-widget="tree">
-                <li class="header">MAIN NAVIGATION</li>
-                <div id="container">
 
+                <div class="noteSplit" id="noteSplitter"></div>
+                <div class="editor_container">
+                <textarea name="editor" id="editor" rows="10" cols="80">
+
+            </textarea>
                 </div>
-
-
-            </ul>
-        </section>
-        <!-- /.sidebar -->
-    </aside>
-
-    <!-- Content Wrapper. Contains page content -->
-    <div class="content-wrapper" style="min-height: 960px;">
-        <!-- Content Header (Page header) -->
-        <section class="content-header">
-
-        </section>
-
-        <!-- Main content -->
-        <section class="content">
-            <!-- Info boxes -->
-
-
-        </section>
-        <!-- /.content -->
-    </div>
-    <!-- /.content-wrapper -->
-
-    <footer class="main-footer">
-        <div class="pull-right hidden-xs">
-            <b>Version</b> 2.4.0
+            </div>
         </div>
-        <strong>Copyright © 2014-2016 <a href="https://adminlte.io">Almsaeed Studio</a>.</strong> All rights
-        reserved.
-    </footer>
-
+    </div>
 
 </div>
 <!-- ./wrapper -->
@@ -201,18 +279,57 @@
 <script src="/resource/bower_components/bootstrap/dist/js/bootstrap.js"></script>
 <script src="/resource/adminLTE/js/adminlte.js"></script>
 <script src="/resource/plugins/jstree/jstree.js"></script>
-<script>
-    var totalpage=1;
-    var curPage=1;
+<script src="/resource/js/note.js"></script>
+<script src="/resource/plugins/template.js"></script>
+<script src="/resource/bower_components/ckeditor/ckeditor.js"></script>
 
+<script>
+    var totalpage = 1;
+    var curPage = 1;
+    var ckeditor;
     $(function () {
+        Resize.init();
         $('#container').on('changed.jstree', function (e, data) {
             notebookId = data.node.id;
-            $.get("/note/getNotePage", {pageNumber: 1,notebookId: notebookId},
-                function (data, status) {
+            $.get("/note/getNotePage", {pageNumber: 1, notebookId: notebookId},
+                function (noteList, status) {
                     totalpage = data.totalPages;
                     curPage = data.number + 1;
-                    console.log(data);
+                    //var template = require('template_js')
+
+                    noteList = noteList.content;
+                    html = '';
+                    if (noteList && noteList.length > 0) {
+                        noteList.forEach(function (note, index) {
+                            html = html + '   <li href="#" class="item item-my" data-seq="1" ' +
+                                '        noteid="' + note.noteId +
+                                '">' +
+                                '        <div class="item-blog"><i class="fa fa-bold" title="blog"></i></div>' +
+                                '        <div class="item-setting"><i class="fa fa-cog" title="setting"></i></div>' +
+                                '        <div class="item-desc"><p class="item-title">' + note.title + '</p>' +
+                                '            <p class="item-info"><i class="fa fa-book"></i> <span' +
+                                '                    class="note-notebook">'+note.notebook.notebookId+'</span> <i class="fa fa-clock-o"></i> <span' +
+                                '                    class="updated-time">' + note.updatedTime + '</span></p>' +
+                                '            <p class="desc">' + note.updatedTime +
+                                '                </p></div>' +
+                                '    </li>';
+                        })
+                    }
+                    $("#noteItemList").html(html);
+                    $(".item").click(function () {
+                        console.log("clcik");
+                        noteid = $(this)[0].getAttribute("noteid");
+
+                        $.get("/note/getNote", {noteId: noteid}, function (data) {
+                            $("#editor").val(data.content.content);
+
+
+
+
+                            if (ckeditor) ckeditor.destroy(true);
+                            ckeditor = CKEDITOR.replace("editor");
+                        })
+                    })
                 });
 
 
@@ -233,7 +350,12 @@
                 "check_callback": true
             }
         });
+        ckeditor = CKEDITOR.replace('editor', {height: '480px', width: '100%'});
     });
+
+
+
+
 
 </script>
 </body>

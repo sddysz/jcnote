@@ -1,5 +1,7 @@
 package cn.dongyeshengzhen.cloudnote.note.entity;
 
+import cn.dongyeshengzhen.cloudnote.notebook.entity.Notebook;
+
 import javax.persistence.*;
 import java.util.Date;
 import java.util.List;
@@ -14,7 +16,7 @@ public class Note {
     private Integer userId;
     //创建者
     private Integer createdUserId;
-    private Integer notebookId;
+   // private Integer notebookId;
     private String title;
     private String description;
     private String src;
@@ -40,6 +42,30 @@ public class Note {
     private Integer usn;
     private Boolean isDeleted;
 
+    @ManyToOne
+    @JoinColumn(name = "notebook_id")
+    private Notebook notebook;
+
+    @OneToOne
+    @JoinColumn(name="note_id")
+    private NoteContent content;
+
+    public Notebook getNotebook() {
+        return notebook;
+    }
+
+    public void setNotebook(Notebook notebook) {
+        this.notebook = notebook;
+    }
+
+    public NoteContent getContent() {
+        return content;
+    }
+
+    public void setContent(NoteContent content) {
+        this.content = content;
+    }
+
     public Integer getNoteId() {
         return noteId;
     }
@@ -64,13 +90,7 @@ public class Note {
         this.createdUserId = createdUserId;
     }
 
-    public Integer getNotebookId() {
-        return notebookId;
-    }
 
-    public void setNotebookId(Integer notebookId) {
-        this.notebookId = notebookId;
-    }
 
     public String getTitle() {
         return title;

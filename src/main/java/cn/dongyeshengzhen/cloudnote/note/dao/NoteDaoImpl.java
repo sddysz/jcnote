@@ -23,7 +23,7 @@ public class NoteDaoImpl implements NoteDaoExtend {
             public Predicate toPredicate(Root<Note> root, CriteriaQuery<?> cq, CriteriaBuilder cb) {
                 List<Predicate> predicates = new ArrayList<>();
                 if (notebookId != null) {
-                    Predicate p1 = cb.equal(root.get("notebookId").as(Integer.class), notebookId);
+                    Predicate p1 = cb.equal(root.get("notebook").get("notebookId").as(Integer.class), notebookId);
                     predicates.add(p1);
                 }
                 Predicate[] p = new Predicate[predicates.size()];
